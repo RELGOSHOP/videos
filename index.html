@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Popup Module with Iframes</title>
+  <style>
+    /* Styles for the popup module */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 9999;
+    }
+
+    .popup-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      width: 400px;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <!-- First picture -->
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR13GGHimUvK1oIY-JO6qLzws137uByYMzFuw&usqp=CAU.png" alt="Picture 1" onclick="openPopup('https://www.wikipedia.org/');" />
+
+  <!-- Second picture -->
+  <img src="path_to_image2.jpg" alt="Picture 2" onclick="openPopup('https://www.example2.com');" />
+
+  <!-- Popup module -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <iframe id="iframe" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+  </div>
+
+  <script>
+    function openPopup(url) {
+      // Set the iframe source to the desired URL
+      document.getElementById("iframe").src = url;
+
+      // Display the popup module
+      document.getElementById("popup").style.display = "block";
+    }
+  </script>
+</body>
+</html>
